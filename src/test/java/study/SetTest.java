@@ -3,6 +3,8 @@ package study;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.Arrays;
@@ -35,14 +37,14 @@ public class SetTest {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {1,2,3})
-    void test_2(int input){
+    @CsvSource(value = {"1:true", "2:true", "3:true", "4:false", "5:false"}, delimiter = ':')
+    void test_2(String input, String expected){
         // 준비
 
         // 실행
 
         // 검증
-        assertThat(numbers).contains(input);
+        assertThat(numbers.contains(Integer.valueOf(input))).isEqualTo(Boolean.valueOf(expected));
     }
 
 }
