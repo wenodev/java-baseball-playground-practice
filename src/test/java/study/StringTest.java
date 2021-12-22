@@ -23,4 +23,16 @@ public class StringTest {
         assertThat(arr).contains("1"); // 순서를 보장한다.
         assertThat(arr).containsExactly("1"); // 순서를 보장하지 않는다.
     }
+
+    @Test
+    void test_2(){
+        // 준비
+        String givenStr = "(1,2)";
+
+        // 실행
+        String result = givenStr.substring(1,4);
+
+        // 검증
+        assertThat(result).isEqualTo("1,2");
+    }
 }
