@@ -3,6 +3,7 @@ package study;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class StringTest {
     @Test
@@ -35,4 +36,18 @@ public class StringTest {
         // 검증
         assertThat(result).isEqualTo("1,2");
     }
+
+    @Test
+    void test_3(){
+        // 준비
+        String givenStr = "abc";
+
+        assertThatThrownBy(() ->
+                // 실행
+                givenStr.charAt(3)
+
+                // 검증
+        ).isInstanceOf(StringIndexOutOfBoundsException.class);
+    }
+
 }
