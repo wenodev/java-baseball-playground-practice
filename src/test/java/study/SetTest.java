@@ -3,7 +3,6 @@ package study;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -12,6 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.in;
 
 public class SetTest {
     private Set<Integer> numbers;
@@ -37,8 +37,19 @@ public class SetTest {
     }
 
     @ParameterizedTest
+    @ValueSource(ints = {1,2,3})
+    void test_2(int input){
+        // 준비
+
+        // 실행
+
+        // 검증
+        assertThat(numbers).contains(input);
+    }
+
+    @ParameterizedTest
     @CsvSource(value = {"1:true", "2:true", "3:true", "4:false", "5:false"}, delimiter = ':')
-    void test_2(String input, String expected){
+    void test_3(String input, String expected){
         // 준비
 
         // 실행
