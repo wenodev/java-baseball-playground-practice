@@ -2,7 +2,7 @@ package calculator;
 
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 /*
 Todo
@@ -27,6 +27,18 @@ public class CalculatorTest {
 
         // 검증
         assertThat(input.length()).isEqualTo(expression.length()+1);
+    }
+
+    @Test
+    void 문자열의_길이는_공백문자갯수에_두배에_1을_더한값과_같아야한다(){
+        // 준비
+        String input = "3 + 1 - 2 * 1";
+        int whileSpaceNumber = (int) input.chars().filter(c -> c == ' ').count();
+
+        // 실행
+
+        // 검증
+        assertThat(input.length()).isEqualTo(whileSpaceNumber*2+1);
     }
 
 }
