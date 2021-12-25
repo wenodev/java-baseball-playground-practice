@@ -2,6 +2,8 @@ package calculator;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.regex.Pattern;
+
 import static org.assertj.core.api.Assertions.*;
 
 /*
@@ -39,6 +41,19 @@ public class CalculatorTest {
 
         // 검증
         assertThat(input.length()).isEqualTo(whileSpaceNumber*2+1);
+    }
+
+    @Test
+    void 문자열에_사칙연산과_관련된_문자가_없다면_예외가_발생한다(){
+        // 준비
+        String input = "3  1  2  1";
+
+        // 실행
+        boolean isValid = input.matches(".*[+\\-*/].*");
+
+
+        // 검증
+        assertThat(isValid).isFalse();
     }
 
 }
