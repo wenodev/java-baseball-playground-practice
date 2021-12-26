@@ -17,6 +17,16 @@ public class CalculatorInputTest {
     CalculatorInput calculatorInput = new CalculatorInput();
 
     @Test
+    void generateStr_메소드는_연산에_필요한_숫자와_문자를_입력받는다(){
+        // 준비
+
+        // 실행
+        String inputString =  calculatorInput.generateStr();
+
+        // 검증
+    }
+
+    @Test
     void 문자열_끝에_공백이있다면_제거하라(){
         // 준비
         String input = "3 + 1 - 2 * 1 ";
