@@ -1,8 +1,7 @@
-package calculator;
+package calculator.ui;
 
+import calculator.Calculator;
 import org.junit.jupiter.api.Test;
-
-import java.util.regex.Pattern;
 
 import static org.assertj.core.api.Assertions.*;
 
@@ -13,8 +12,9 @@ Todo
 - [x] 공백의 갯수의 2배에 1을 더한값과 문자열의 길이는 같아야 한다.
 - [x] 사칙연산 문자 1개 이상 존재
  */
-public class CalculatorTest {
-    Calculator calculator = new Calculator();
+public class CalculatorInputTest {
+
+    CalculatorInput calculatorInput = new CalculatorInput();
 
     @Test
     void 문자열_끝에_공백이있다면_제거하라(){
