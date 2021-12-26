@@ -11,8 +11,8 @@ Todo
 1. input 값 검증
 - [x] 문자열 끝에 공백에 있으면 삭제되어야 한다.
 - [x] 공백의 갯수의 2배에 1을 더한값과 문자열의 길이는 같아야 한다.
-- [ ] 사칙연산 문자 1개 이상 존재
-- [ ] 숫자 문자 2개 이상 존재
+- [x] 사칙연산 문자 1개 이상 존재
+- [ ] 숫자2개 문자 1개 이상 존재
 - [ ] 숫자, 사칙연산을 제외한 문자 입력하면 안됨
  */
 public class CalculatorTest {
@@ -50,7 +50,6 @@ public class CalculatorTest {
 
         // 실행
         boolean isValid = input.matches(".*[+\\-*/].*");
-
 
         // 검증
         assertThat(isValid).isFalse();
