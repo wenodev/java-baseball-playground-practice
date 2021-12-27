@@ -1,5 +1,6 @@
 package calculator.ui;
 
+import calculator.Calculator;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
@@ -20,6 +21,7 @@ Todo
 public class CalculatorInputTest {
 
     CalculatorInput calculatorInput = new CalculatorInput();
+    Calculator calculator = new Calculator();
 
     @Test
     void generateStr_메소드는_연산에_필요한_숫자와_문자를_입력받는다(){
@@ -34,6 +36,17 @@ public class CalculatorInputTest {
 
         // 검증
         assertThat(input).isEqualTo("3 + 1 - 2 * 1");
+    }
+
+    @Test
+    void getResult_메소드는_연산된_결과값을_받는다(){
+        // 준비
+        String input = "3 + 1 - 2 * 1";
+
+        // 실행
+        Double result = calculator.getResult(input);
+
+        // 검증
     }
 
     @Test
