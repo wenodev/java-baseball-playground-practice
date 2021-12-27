@@ -3,12 +3,20 @@ package calculator.ui;
 import java.util.Scanner;
 
 public class CalculatorInput {
-    public String generateStr() {
-        Scanner scanner = new Scanner(System.in);
-        return scanner.next();
+
+    private String input;
+
+    public String getInput() {
+        return input;
     }
 
-    public Double getResult(String input) {
+    public String generateStr() {
+        Scanner scanner = new Scanner(System.in);
+        input = scanner.next();
+        return input;
+    }
+
+    public Double getResult() {
         return null;
     }
 }

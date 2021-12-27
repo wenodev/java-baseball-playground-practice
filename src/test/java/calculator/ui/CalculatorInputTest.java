@@ -10,6 +10,7 @@ import java.io.OutputStream;
 import java.io.PrintStream;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.BDDMockito.given;
 
 /*
 Todo
@@ -43,7 +44,7 @@ public class CalculatorInputTest {
         String input = "3 + 1 - 2 * 1";
 
         // 실행
-        Double result = calculatorInput.getResult(input);
+        Double result = calculatorInput.getResult();
 
         // 검증
         assertThat(result).isEqualTo(2);
