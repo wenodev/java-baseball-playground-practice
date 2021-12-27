@@ -1,10 +1,18 @@
 package calculator.ui;
 
+import calculator.Calculator;
+
 import java.util.Scanner;
 
 public class CalculatorInput {
 
+    private final Calculator calculator;
+
     private String input;
+
+    public CalculatorInput(Calculator calculator) {
+        this.calculator = calculator;
+    }
 
     public String getInput() {
         return input;
@@ -17,6 +25,6 @@ public class CalculatorInput {
     }
 
     public Double getResult() {
-        return null;
+        return calculator.getResult(input);
     }
 }

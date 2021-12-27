@@ -21,7 +21,8 @@ Todo
  */
 public class CalculatorInputTest {
 
-    CalculatorInput calculatorInput = new CalculatorInput();
+    Calculator calculator = new Calculator();
+    CalculatorInput calculatorInput = new CalculatorInput(calculator);
 
     @Test
     void generateStr_메소드는_연산에_필요한_숫자와_문자를_입력받는다(){
