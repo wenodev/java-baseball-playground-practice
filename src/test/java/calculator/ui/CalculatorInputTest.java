@@ -1,9 +1,14 @@
 package calculator.ui;
 
-import calculator.Calculator;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.*;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintStream;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 /*
 Todo
@@ -19,11 +24,16 @@ public class CalculatorInputTest {
     @Test
     void generateStr_메소드는_연산에_필요한_숫자와_문자를_입력받는다(){
         // 준비
+        String input = "3 + 1 - 2 * 1";
+        OutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        InputStream in = new ByteArrayInputStream(input.getBytes());
 
         // 실행
-        String inputString =  calculatorInput.generateStr();
+        System.setIn(in);
 
         // 검증
+        assertThat(input).isEqualTo("3 + 1 - 2 * 1");
     }
 
     @Test
