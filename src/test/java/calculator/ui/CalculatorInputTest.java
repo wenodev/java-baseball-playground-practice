@@ -46,6 +46,7 @@ public class CalculatorInputTest {
         Double result = calculatorInput.getResult(input);
 
         // 검증
+        assertThat(result).isEqualTo(2);
     }
 
     @Test
