@@ -1,10 +1,16 @@
-package calculator;
+package calculator.ui;
 
+import calculator.Calculator;
 import org.junit.jupiter.api.Test;
 
-import java.util.regex.Pattern;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintStream;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.BDDMockito.given;
 
 /*
 Todo
@@ -13,8 +19,37 @@ Todo
 - [x] 공백의 갯수의 2배에 1을 더한값과 문자열의 길이는 같아야 한다.
 - [x] 사칙연산 문자 1개 이상 존재
  */
-public class CalculatorTest {
+public class CalculatorInputTest {
+
     Calculator calculator = new Calculator();
+    CalculatorInput calculatorInput = new CalculatorInput(calculator);
+
+    @Test
+    void generateStr_메소드는_연산에_필요한_숫자와_문자를_입력받는다(){
+        // 준비
+        String input = "3 + 1 - 2 * 1";
+        OutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+
+        // 실행
+        System.setIn(in);
+
+        // 검증
+        assertThat(input).isEqualTo("3 + 1 - 2 * 1");
+    }
+
+    @Test
+    void getResult_메소드는_연산된_결과값을_받는다(){
+        // 준비
+        String input = "3 + 1 - 2 * 1";
+
+        // 실행
+        Double result = calculatorInput.getResult();
+
+        // 검증
+        assertThat(result).isEqualTo(2);
+    }
 
     @Test
     void 문자열_끝에_공백이있다면_제거하라(){
