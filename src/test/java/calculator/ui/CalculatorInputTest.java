@@ -21,7 +21,6 @@ Todo
 public class CalculatorInputTest {
 
     CalculatorInput calculatorInput = new CalculatorInput();
-    Calculator calculator = new Calculator();
 
     @Test
     void generateStr_메소드는_연산에_필요한_숫자와_문자를_입력받는다(){
@@ -44,7 +43,7 @@ public class CalculatorInputTest {
         String input = "3 + 1 - 2 * 1";
 
         // 실행
-        Double result = calculator.getResult(input);
+        Double result = calculatorInput.getResult(input);
 
         // 검증
     }
