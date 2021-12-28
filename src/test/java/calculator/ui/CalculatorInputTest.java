@@ -21,8 +21,7 @@ Todo
  */
 public class CalculatorInputTest {
 
-    Calculator calculator = new Calculator();
-    CalculatorInput calculatorInput = new CalculatorInput(calculator);
+    CalculatorInput calculatorInput = new CalculatorInput();
 
     @Test
     void generateStr_메소드는_연산에_필요한_숫자와_문자를_입력받는다(){
@@ -37,18 +36,6 @@ public class CalculatorInputTest {
 
         // 검증
         assertThat(input).isEqualTo("3 + 1 - 2 * 1");
-    }
-
-    @Test
-    void getResult_메소드는_연산된_결과값을_받는다(){
-        // 준비
-        String input = "3 + 1 - 2 * 1";
-
-        // 실행
-        Double result = calculatorInput.getResult();
-
-        // 검증
-        assertThat(result).isEqualTo(2);
     }
 
     @Test
