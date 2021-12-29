@@ -1,4 +1,4 @@
-package calculator;
+package calculator.domain;
 
 import org.junit.jupiter.api.Test;
 
@@ -12,6 +12,8 @@ class CalculatorTest {
     void calculate_메소드는_주어진_문자열을_계산하여_리턴한다(){
         // 준비
         String input = "3 + 1 - 2 * 1";
+        String[] array = calculator.makeArray(input);
+        Double outcome = calculator.makeResult(array);
 
         // 실행
         Double result = calculator.calculate(input);
