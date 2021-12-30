@@ -3,7 +3,7 @@ package calculator.domain;
 public class Calculator {
     public Double calculate(String input) {
         String[] array = makeArray(input);
-        return 2D;
+        return makeResult(array);
     }
 
     public String[] makeArray(String input) {
