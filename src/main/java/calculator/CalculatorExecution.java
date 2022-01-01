@@ -14,7 +14,7 @@ public class CalculatorExecution {
     }
 
     public void start() {
-        String input = calculatorInput.generateStr();
+        String input = calculatorInput.inputStr();
         System.out.println("주어진 계산식: " + input);
 
         Double result = calculator.calculate(input);
