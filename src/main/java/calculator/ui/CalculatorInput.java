@@ -2,6 +2,9 @@ package calculator.ui;
 
 import java.util.Scanner;
 
+/**
+ * 계산을 위한 문자열을 입력받는 클래스입니다.
+ */
 public class CalculatorInput {
 
     /**
