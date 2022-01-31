@@ -3,9 +3,8 @@ package baseball;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Random;
-
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.BDDMockito.given;
 
 public class BaseBallTest {
 
@@ -29,13 +28,16 @@ public class BaseBallTest {
     }
 
     @Test
-    void test_submit_answer(){
+    void test_submit_answer_is_3Strike(){
         // 준비
+        int number = 123;
 
         // 실행
-        String expected = baseBall.submitAnswer();
+        String expected = baseBall.submitAnswer(number);
 
         // 검증
+        String actual = "3스트라이크";
+        assertThat(actual).isEqualTo(expected);
     }
 
 }
