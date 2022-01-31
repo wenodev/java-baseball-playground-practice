@@ -28,4 +28,14 @@ public class BaseBallTest {
         assertThat(number).isLessThan(1000);
     }
 
+    @Test
+    void test_submit_answer(){
+        // 준비
+
+        // 실행
+        String expected = baseBall.submitAnswer();
+
+        // 검증
+    }
+
 }

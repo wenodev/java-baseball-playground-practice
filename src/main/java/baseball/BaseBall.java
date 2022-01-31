@@ -8,4 +8,8 @@ public class BaseBall {
         random.setSeed(System.currentTimeMillis());
         return (int) ((Math.random() * (1000 - 100)) + 100);
     }
+
+    public String submitAnswer() {
+        return null;
+    }
 }
