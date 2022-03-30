@@ -10,10 +10,10 @@ public class Referee {
         return ball;
     }
 
-    public String judge(Ball userBall) {
+    public BallStatus judge(Ball userBall) {
         if (ball.getPosition() == userBall.getPosition() && ball.getNumber() == ball.getNumber()){
-            return "STRIKE";
+            return BallStatus.STRIKE;
         }
-        return null;
+        return BallStatus.NOTHING;
     }
 }

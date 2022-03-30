@@ -18,7 +18,7 @@ class RefereeTest {
         Ball userBall = new Ball(1,1);
         Referee referee = new Referee(comBall);
 
-        assertThat(referee.judge(userBall)).isEqualTo("STRIKE");
+        assertThat(referee.judge(userBall)).isEqualTo(BallStatus.STRIKE);
     }
 
 }
