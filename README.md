@@ -24,3 +24,22 @@ git checkout main // 기본 브랜치가 main인 경우
 git checkout -b 브랜치이름
 ex) git checkout -b apply-feedback
 ```
+
+
+## 컨벤션
+테스트 코드 네이밍 : MethodName_StateUnderTest_ExpectedBehavior 
+참고 : https://dzone.com/articles/7-popular-unit-test-naming
+
+## 야구 게임 요구 사항 정리
+- 컴퓨터가 1~9까지 3개의 숫자를 랜덤으로 생성한다.
+- 사용자가 3개의 숫자를 선택한다.
+- 같은 수가 같은 자리면 스트라이크이다.
+- 같은 수가 다른 자리면 볼이다.
+- 스트라이크와 볼이 없다면 낫싱이다.
+- 힌트를 토대로 컴퓨터의 수를 맞추면 승리한다.
+---
+com / user
+123 / 123 : 3 스트라이크
+123 / 124 : 2 스트라이크
+123 / 341 : 2 볼
+123 / 456  : 낫싱
