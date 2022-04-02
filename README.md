@@ -38,7 +38,3 @@ ex) git checkout -b apply-feedback
 - 스트라이크와 볼이 없다면 낫싱이다.
 - 힌트를 토대로 컴퓨터의 수를 맞추면 승리한다.
 
----
-123, 1 1 -> strike
-123, 2 1 -> ball
-123, 2 4 -> nothing
