@@ -23,17 +23,17 @@ public class BallsTest {
 
     @Test
     void play_notSamePositionAndNumber_nothing(){
-        balls.play(new Ball(1,4));
+        assertThat(balls.play(new Ball(1,4))).isEqualTo(BallStatus.NOTHING);
     }
 
     @Test
     void play_notSamePositionAndSameNumber_ball(){
-        balls.play(new Ball(1,2));
+        assertThat(balls.play(new Ball(1,2))).isEqualTo(BallStatus.BAll);
     }
 
     @Test
     void play_SamePositionAndNumber_strike(){
-        balls.play(new Ball(1,1));
+        assertThat(balls.play(new Ball(1,1))).isEqualTo(BallStatus.STRIKE);
     }
 
 }

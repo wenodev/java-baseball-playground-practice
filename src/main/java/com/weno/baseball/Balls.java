@@ -16,14 +16,17 @@ public class Balls {
     }
 
     public BallStatus play(Ball userBall) {
-        Ball comBall = balls.get(userBall.getPosition() - 1);
-        return comBall.play(userBall);
+        return balls.stream()
+                .map(comBall -> comBall.play(userBall))
+                .filter(status -> status != BallStatus.NOTHING)
+                .findFirst()
+                .orElse(BallStatus.NOTHING);
     }
 
     private List<Ball> mapBall(List<Integer> numbers) {
         List<Ball> balls = new ArrayList<>();
         for (int i = 0; i< numbers.size(); i++){
-            balls.add(new Ball(i, numbers.get(i)));
+            balls.add(new Ball(i+1, numbers.get(i)));
         }
         return balls;
     }
