@@ -27,12 +27,12 @@ public class BallsTest {
     }
 
     @Test
-    void play_notSamePositionAndSameNumber_nothing(){
+    void play_notSamePositionAndSameNumber_ball(){
         balls.play(new Ball(1,2));
     }
 
     @Test
-    void play_SamePositionAndNumber_nothing(){
+    void play_SamePositionAndNumber_strike(){
         balls.play(new Ball(1,1));
     }
 
